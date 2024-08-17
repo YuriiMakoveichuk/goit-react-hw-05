@@ -1,0 +1,8 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.list {
+  padding: inherit;
+  list-style-type: disc;
+}

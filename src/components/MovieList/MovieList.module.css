@@ -1,0 +1,16 @@
+.link {
+  color: blue;
+  transition: color 250ms linear, text-decoration-color 250ms linear;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.link:hover,
+.link:focus {
+  color: red;
+  text-decoration-color: red;
+}

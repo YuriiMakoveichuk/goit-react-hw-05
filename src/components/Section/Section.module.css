@@ -1,0 +1,7 @@
+.section {
+  padding: 20px 0 10px;
+}
+
+.section:not(:last-child) {
+  border-bottom: 2px solid grey;
+}

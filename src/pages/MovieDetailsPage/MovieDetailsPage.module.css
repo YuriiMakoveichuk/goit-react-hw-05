@@ -1,0 +1,49 @@
+.boxMain {
+  display: flex;
+}
+
+.boxImg {
+  width: 400px;
+  margin-right: 30px;
+}
+
+.details {
+  width: 700px;
+}
+
+.title {
+  margin-bottom: 5px;
+}
+
+.text {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-bottom: 5px;
+}
+
+.informationTitle {
+  margin-bottom: 10px;
+}
+
+.list {
+  padding-left: 15px;
+  list-style-type: disc;
+}
+
+.link {
+  color: blue;
+  transition: color 250ms linear, text-decoration-color 250ms linear;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.link:hover {
+  color: red;
+  text-decoration-color: red;
+}
