@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { getDetailsMovie } from "../../apiServer/apiHomeMovies";
+
 import Loader from "../../components/Loader/Loader";
 import { Container } from "../../components/Container/Container";
 import { Section } from "../../components/Section/Section";
-import { GoArrowLeft } from "react-icons/go";
+import GoBackBtn from "../../components/GoBackBtn/GoBackBtn";
+
+import { getDetailsMovie } from "../../apiServer/apiHomeMovies";
 
 import css from "./MovieDetailsPage.module.css";
 
@@ -13,11 +15,10 @@ const MovieDetailsPage = () => {
   const [detailsMovie, setDetailsMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const location = useLocation();
 
-  console.log("location from details", location);
-
-  const backLinkRef = useRef(location.state?.from ?? "/movies");
+  const backLinkRef = useRef(location.state?.from ?? "/");
 
   useEffect(() => {
     const fetchDetailsMovie = async () => {
@@ -42,10 +43,7 @@ const MovieDetailsPage = () => {
         <>
           <Section>
             <Container>
-              <Link to={backLinkRef.current}>
-                <GoArrowLeft />
-                Go back
-              </Link>
+              <GoBackBtn backLinkRef={backLinkRef} />
               <div className={css.boxMain}>
                 <div className={css.boxImg}>
                   <img
@@ -65,7 +63,7 @@ const MovieDetailsPage = () => {
                   <p className={css.text}>{detailsMovie.overview}</p>
                   <h3 className={css.subtitle}>Genres</h3>
                   <p>
-                    {detailsMovie.genres.map((genre) => genre.name).join(" / ")}
+                    {detailsMovie.genres.map((genre) => genre.name).join(", ")}
                   </p>
                 </div>
               </div>

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { getHomeMovies } from "../../apiServer/apiHomeMovies";
-
 import MovieList from "../../components/MovieList/MovieList";
-
-import css from "./HomePage.module.css";
 import Loader from "../../components/Loader/Loader";
 import { Section } from "../../components/Section/Section";
 import { Container } from "../../components/Container/Container";
+
+import { getHomeMovies } from "../../apiServer/apiHomeMovies";
+
+import css from "./HomePage.module.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState(null);

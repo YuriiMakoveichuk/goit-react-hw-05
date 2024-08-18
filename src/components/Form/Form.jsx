@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ImSearch } from "react-icons/im";
+import toast from "react-hot-toast";
 
 import css from "./Form.module.css";
-import toast from "react-hot-toast";
 
 const Form = ({ onSubmit }) => {
   const [query, setQuery] = useState("");

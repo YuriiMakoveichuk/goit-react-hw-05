@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import css from "./MovieList.module.css";
 
 const MovieList = ({ movies, location }) => {
-  // console.log(movies);
   return (
     <>
       {movies.map((movie) => {

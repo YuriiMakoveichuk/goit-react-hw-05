@@ -18,8 +18,8 @@ const MoviesPage = () => {
   const [isError, setIsError] = useState(null);
   const [isEmpty, setIsEmpty] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+
   const location = useLocation();
-  console.log("location", location);
 
   const queryValue = searchParams.get("query");
 

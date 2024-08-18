@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import Loader from "../Loader/Loader";
+
 import { getCastMovie } from "../../apiServer/apiHomeMovies";
 
 import css from "./MovieCast.module.css";
-import Loader from "../Loader/Loader";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -17,7 +19,6 @@ const MovieCast = () => {
       setError(null);
       try {
         const data = await getCastMovie(movieId);
-        console.log(data);
         setCastsMovie(data);
       } catch (error) {
         setError(error);
